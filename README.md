@@ -7,7 +7,7 @@ for example, GET / from suckless.org on port 80:
 #include "http.h"
 
 int
-main()
+main(void)
 {
 	char *response; long long int size;
 	if(!(size = httpGET("suckless.org", 80, "/", &response))) return -1;
