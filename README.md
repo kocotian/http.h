@@ -25,8 +25,7 @@ main()
 {
 	char *response, *data; long long int size;
 	if(!(size = httpGET("suckless.org", 80, "/", &response))) return -1;
-	data = strstr(response, "\r\n\r\n") + 4;
-	printf("%s", data);
+	printf("%s", truncateHeader(response));
 	free(response);
 	return 0;
 }
