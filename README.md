@@ -13,7 +13,10 @@ main()
     printf("%s", response);
 }
 ```
-### compatibility:
+## compatibility:
 any POSIX 7 compliant system: yes
 
 windows: no
+
+## additional features:
+if you want to change maximal request length (*default 1024*), `#define MAX_REQUEST_LEN` as new request length __before__ `#including "http.h"`
