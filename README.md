@@ -3,7 +3,7 @@ simple and small http library for C99
 just include header in your project and you ready to GET.
 
 for example, GET / from suckless.org on port 80:
-```
+```c
 #include "http.h"
 int
 main()
