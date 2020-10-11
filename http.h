@@ -3,6 +3,13 @@
 
 #define _XOPEN_SOURCE 700
 
+/*
+ * http.h
+ * simple and small http library for C99
+ * version 0.1.1
+ * creator: kocotian
+ */
+
 #include <arpa/inet.h>
 #include <netdb.h>
 #include <netinet/in.h>
@@ -19,6 +26,7 @@
 long long int httpGET(char *hostname, unsigned short port, char *path, char **buffer);
 int getResponseStatus(char *response);
 int parseResponseLine(char *response, char *value, char **buffer);
+char *truncateHeader(char *response);
 
 long long int
 httpGET(char *hostname, unsigned short port, char *path, char **buffer)
@@ -120,6 +128,11 @@ parseResponseLine(char *response, char *value, char **buffer)
 		}
 	}
 	return -1;
+}
+
+char *truncateHeader(char *response)
+{
+	return strstr(response, "\r\n\r\n") + 4;
 }
 
 #endif
