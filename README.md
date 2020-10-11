@@ -13,3 +13,7 @@ main()
     printf("%s", response);
 }
 ```
+### compatibility:
+any POSIX 7 compliant system: yes
+
+windows: no
