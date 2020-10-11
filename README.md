@@ -9,24 +9,24 @@ for example, GET / from suckless.org on port 80:
 int
 main()
 {
-    char *response; long long int size;
-    if(!(size = httpGET("suckless.org", 80, "/", &response))) return -1;
-    printf("%s", response);
-    free(response);
-    return 0;
+	char *response; long long int size;
+	if(!(size = httpGET("suckless.org", 80, "/", &response))) return -1;
+	printf("%s", response);
+	free(response);
+	return 0;
 }
 ```
 same as higher, but without HTTP header:
 ```c
-#include "../http.h"
+#include "http.h"
 
 int
 main()
 {
-    char *response, *data; long long int size;
-    if(!(size = httpGET("suckless.org", 80, "/", &response))) return -1;
+	char *response, *data; long long int size;
+	if(!(size = httpGET("suckless.org", 80, "/", &response))) return -1;
 	data = strstr(response, "\r\n\r\n") + 4;
-    printf("%s", data);
+	printf("%s", data);
 	free(response);
 	return 0;
 }
