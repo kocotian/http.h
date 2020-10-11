@@ -6,7 +6,7 @@
 /*
  * http.h
  * simple and small http library for C99
- * version 0.1.1
+ * version 0.1.2
  * creator: kocotian
  */
 
@@ -27,6 +27,7 @@ long long int httpGET(char *hostname, unsigned short port, char *path, char **bu
 int getResponseStatus(char *response);
 int parseResponseLine(char *response, char *value, char **buffer);
 char *truncateHeader(char *response);
+int getHeaderLength(char *response);
 
 long long int
 httpGET(char *hostname, unsigned short port, char *path, char **buffer)
@@ -133,6 +134,11 @@ parseResponseLine(char *response, char *value, char **buffer)
 char *truncateHeader(char *response)
 {
 	return strstr(response, "\r\n\r\n") + 4;
+}
+
+int getHeaderLength(char *response)
+{
+	return strstr(response, "\r\n\r\n") - response;
 }
 
 #endif
