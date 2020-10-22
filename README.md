@@ -17,6 +17,10 @@ main(void)
 	return 0;
 }
 ```
+
+## warning:
+`parseResponseLine()` and `getResponseStatus()` may be broken, i'll repair them
+
 ## compatibility:
 any POSIX 7 compliant system: yes
 
