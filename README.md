@@ -1,4 +1,8 @@
 # http.h
+
+> [!WARNING]
+> This was one of my first C projects, written when I was 15. It is preserved for historical and educational purposes, but is no longer maintained. The implementation is not recommended for production use.
+
 simple and small http library for C99,
 just include header in your project and you ready to GET.
 
